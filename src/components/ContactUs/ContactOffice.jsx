@@ -4,13 +4,12 @@ const ContactOffice = () => {
   const officeDetails = {
     name: "BD Global Office",
     address: [
-      "123 Business Tower,",
-      "Commercial Complex,",
-      "Andheri East,",
-      "Mumbai - 400001, India"
+      "D 194, First Floor,",
+      "Okhla Phase 1,",
+      "New Delhi - 110019"
     ],
-    phone: "+91 98765 43210",
-    email: "info@bdglobal.com"
+    phone: "+91 7678522441",
+    email: "info@bd-global.in"
   };
 
   const handleGetDirections = () => {

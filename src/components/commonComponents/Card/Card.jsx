@@ -19,7 +19,7 @@ const CallToActionCard = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* WhatsApp Button */}
             <button 
-              onClick={() => window.open('https://wa.me/919876543210', '_blank')}
+              onClick={() => window.open('https://wa.me/917678522441', '_blank')}
               className="bg-white text-custom-black hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center gap-2 shadow-lg"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -30,10 +30,10 @@ const CallToActionCard = () => {
             
             {/* Call Button */}
             <button 
-              onClick={() => window.open('tel:+919876543210', '_self')}
+              onClick={() => window.open('tel:+917678522441', '_self')}
               className="border-2 border-white text-white hover:bg-white hover:text-custom-black px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-lg"
             >
-              Call Now: +91 98765 43210
+              Call Now: +91 7678522441
             </button>
           </div>
         </div>

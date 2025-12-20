@@ -79,7 +79,9 @@ const WhyChoosePackages = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button onClick={() => window.location.href = `/contact`} className='bg-emerald-400' children="Get Free Consultation"/>
 
-            <button className="bg-transparent border-2 border-white/60 hover:border-white hover:bg-white hover:text-gray-900 text-white font-semibold px-10 py-3 rounded-lg transition-all duration-300 w-full sm:w-auto">
+            <button 
+              onClick={() => window.open('https://wa.me/917678522441', '_blank')}
+              className="bg-transparent border-2 border-white/60 hover:border-white hover:bg-white hover:text-gray-900 text-white font-semibold px-10 py-3 rounded-lg transition-all duration-300 w-full sm:w-auto">
               Chat on WhatsApp
             </button>
           </div>

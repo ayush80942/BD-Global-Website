@@ -26,7 +26,7 @@ const ContactForm = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919876543210', '_blank');
+    window.open('https://wa.me/917678522441', '_blank');
   };
 
   return (
@@ -54,8 +54,7 @@ const ContactForm = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-custom-black mb-1">Phone</h3>
-                <p className="text-gray-600">+91 98765 43210</p>
-                <p className="text-gray-600">+91 87654 32109</p>
+                <p className="text-gray-600">+91 7678522441</p>
               </div>
             </div>
 
@@ -69,8 +68,7 @@ const ContactForm = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-custom-black mb-1">Email</h3>
-                <p className="text-gray-600">info@bdglobal.com</p>
-                <p className="text-gray-600">support@bdglobal.com</p>
+                <p className="text-gray-600">info@bd-global.in</p>
               </div>
             </div>
 
@@ -83,9 +81,9 @@ const ContactForm = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-custom-black mb-1">Office Address</h3>
-                <p className="text-gray-600">123 Business Tower,</p>
-                <p className="text-gray-600">Commercial Complex,</p>
-                <p className="text-gray-600">Mumbai - 400001, India</p>
+                <p className="text-gray-600">D 194, First Floor,</p>
+                <p className="text-gray-600">Okhla Phase 1,</p>
+                <p className="text-gray-600">New Delhi - 110019</p>
               </div>
             </div>
 
@@ -99,7 +97,6 @@ const ContactForm = () => {
               <div>
                 <h3 className="text-lg font-semibold text-custom-black mb-1">Business Hours</h3>
                 <p className="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
-                <p className="text-gray-600">Sunday: 10:00 AM - 4:00 PM</p>
               </div>
             </div>
 
