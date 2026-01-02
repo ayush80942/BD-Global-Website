@@ -6,7 +6,7 @@ const FeaturedPackages = () => {
     {
       id: 1,
       name: "Starter Pack",
-      badge: "Most Popular Choice",
+      badge: "Most Popular",
       badgeColor: "bg-yellow-500",
       // popularBadge: "Most Popular",
       popularBadgeColor: "bg-teal-500",
@@ -95,8 +95,8 @@ const FeaturedPackages = () => {
               }`}
             >
               {/* Badge */}
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className={`px-4 py-1 rounded-full text-sm font-medium text-white ${
+              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                <span className={`inline-flex items-center justify-center text-center px-4 py-1 rounded-full text-xs sm:text-sm leading-tight whitespace-nowrap text-white ${
                   pkg.highlighted ? 'bg-green-500' : 'bg-blue-500'
                 }`}>
                   {pkg.badge}
@@ -105,7 +105,7 @@ const FeaturedPackages = () => {
 
               {/* Package Title */}
               <h3 className="text-2xl font-bold text-custom-black mb-4 mt-4">
-                {pkg.title}
+                {pkg.name}
               </h3>
 
               {/* Price */}

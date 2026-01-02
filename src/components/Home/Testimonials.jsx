@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -7,7 +7,6 @@ const Testimonials = () => {
       quote: "We had the opportunity to work alongside BD Global Services on a common client engagement where they handled the business operations and compliance execution, while our firm was involved on the professional advisory side. Their structured processes, timely coordination, and documentation discipline ensured smooth execution of the assignment. The collaboration reflected a clear understanding of roles and regulatory requirements.",
       name: "CA Harvinder Singh",
       title: "Founder & Partner, HSDG & Associates",
-      avatar: "https://media.licdn.com/dms/image/v2/D5603AQFrTIZ6dv8w9w/profile-displayphoto-shrink_200_200/B56ZP9mKOeH0AY-/0/1735126461277?e=1767225600&v=beta&t=OWwrR9dqBNRPP3AdKkxyGp8eNJd3D76NyofIzgpbm6M",
       rating: 5
     },
     {
@@ -15,7 +14,6 @@ const Testimonials = () => {
       quote: "Excellent service for all our compliance needs. The WhatsApp support is a game-changer - we get immediate responses to all our queries.",
       name: "Neeraj Sharma",
       title: "MD, CFC Group",
-      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3UmGLzdgbQyGjIslAb3u05ppA4QWRotMWwQ&s",
       rating: 5
     },
     {
@@ -23,7 +21,6 @@ const Testimonials = () => {
       quote: "Switched to BD Global for our accounting needs and couldn't be happier. Their team cleaned up our books and now we have complete transparency.",
       name: "Tariq Ahmed",
       title: "MD, Aksa Legacies Pvt Ltd",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQEdejTiSX6ZRA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1669439654517?e=1767225600&v=beta&t=m4UQjI3CM3r6A7kTYOqWayP9svBSlIQmn-Hr6ZGLQM0",
       rating: 5
     },
     {
@@ -31,7 +28,6 @@ const Testimonials = () => {
       quote: "Their GST filing and compliance support has been exceptional. Professional service with transparent pricing - exactly what we needed.",
       name: "Sneha Gupta",
       title: "Owner, Style Boutique",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
       rating: 5
     },
     {
@@ -39,13 +35,17 @@ const Testimonials = () => {
       quote: "From company formation to ongoing support, BD Global has been our trusted partner. Their expertise in ICAI compliance is unmatched.",
       name: "Vikram Singh",
       title: "Founder, Digital Marketing Pro",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face",
       rating: 5
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [currentIndex]);
 
   const nextTestimonial = () => {
     if (isTransitioning) return;
@@ -101,27 +101,29 @@ const Testimonials = () => {
         </div>
 
         {/* Main Testimonial */}
-        <div className="relative max-w-6xl mx-auto mb-16 px-16">
+        <div className="relative max-w-6xl mx-auto mb-16 px-4 sm:px-10 md:px-16">
           {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            disabled={isTransitioning}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg z-10 disabled:opacity-50"
-          >
-            <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+          <div className="hidden md:block">
+            <button
+              onClick={prevTestimonial}
+              disabled={isTransitioning}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg z-10 disabled:opacity-50"
+            >
+              <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
 
-          <button
-            onClick={nextTestimonial}
-            disabled={isTransitioning}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg z-10 disabled:opacity-50"
-          >
-            <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+            <button
+              onClick={nextTestimonial}
+              disabled={isTransitioning}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg z-10 disabled:opacity-50"
+            >
+              <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
 
           {/* Testimonial Card */}
           <div className="relative">
@@ -139,18 +141,24 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg md:text-xl text-custom-black mb-8 leading-relaxed font-medium max-w-3xl mx-auto">
-                {testimonials[currentIndex].quote}
+              <blockquote className="text-lg md:text-xl text-custom-black mb-4 md:mb-6 leading-relaxed font-medium max-w-3xl mx-auto">
+                {isExpanded
+                  ? testimonials[currentIndex].quote
+                  : `${testimonials[currentIndex].quote.slice(0, 180)}${testimonials[currentIndex].quote.length > 180 ? '...' : ''}`}
               </blockquote>
+
+              {testimonials[currentIndex].quote.length > 180 && (
+                <button
+                  onClick={() => setIsExpanded((prev) => !prev)}
+                  className="text-teal-600 font-semibold text-sm mb-4 hover:text-teal-700"
+                >
+                  {isExpanded ? 'Show less' : 'Read more'}
+                </button>
+              )}
 
               {/* Author */}
               <div className="flex items-center justify-center">
-                <img
-                  src={testimonials[currentIndex].avatar}
-                  alt={testimonials[currentIndex].name}
-                  className="w-12 h-12 rounded-full mr-4 shadow-md"
-                />
-                <div className="text-left">
+                <div className="text-centre">
                   <div className="font-semibold text-custom-black">
                     {testimonials[currentIndex].name}
                   </div>
@@ -175,6 +183,29 @@ const Testimonials = () => {
               />
             ))}
           </div>
+
+          {/* Mobile Navigation Buttons */}
+          <div className="flex md:hidden justify-center gap-4 mt-8">
+            <button
+              onClick={prevTestimonial}
+              disabled={isTransitioning}
+              className="w-11 h-11 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg disabled:opacity-50"
+            >
+              <svg className="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextTestimonial}
+              disabled={isTransitioning}
+              className="w-11 h-11 bg-white border-2 border-teal-500 text-teal-500 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 shadow-lg disabled:opacity-50"
+            >
+              <svg className="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Bottom Testimonials Grid */}
@@ -193,12 +224,7 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center justify-center">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-10 h-10 rounded-full mr-3 shadow-md"
-                />
-                <div className="text-left">
+                <div className="text-centre">
                   <div className="font-semibold text-custom-black text-sm">
                     {testimonial.name}
                   </div>

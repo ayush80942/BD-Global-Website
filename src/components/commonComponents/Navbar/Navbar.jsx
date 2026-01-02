@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="flex items-center bg-white rounded-lg px-8 py-4 shadow-lg">
             {/* Logo */}
             <Link to="/" className="flex items-center mr-8">
-              <img src={Assets.logo} alt="Background" className="w-8 h-8" />
+              <img src={Assets.logo} alt="Background" className="w-10 h-10" />
             </Link>
             
             {/* Navigation Menu */}
@@ -128,11 +128,8 @@ const Navbar = () => {
         {/* Tablet Navbar */}
         <div className="hidden md:flex lg:hidden items-center justify-between bg-white rounded-lg px-4 py-3 shadow-lg">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <div className="bg-teal-600 text-white px-2 py-1 rounded text-sm font-bold mr-2">
-              BD
-            </div>
-            <span className="text-gray-800 font-semibold text-lg">BD Global</span>
+          <Link to="/" className="flex items-center mr-8">
+              <img src={Assets.logo} alt="Background" className="w-10 h-10" />
           </Link>
 
           {/* Tablet Actions */}
@@ -156,11 +153,8 @@ const Navbar = () => {
         {/* Mobile Navbar */}
         <div className="flex md:hidden items-center justify-between bg-white rounded-lg px-4 py-3 shadow-lg">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <div className="bg-teal-600 text-white px-2 py-1 rounded text-xs font-bold mr-2">
-              BD
-            </div>
-            <span className="text-gray-800 font-semibold text-base">BD Global</span>
+          <Link to="/" className="flex items-center ml-2 mr-8">
+              <img src={Assets.logo} alt="Background" className="w-10 h-10" />
           </Link>
 
           {/* Mobile Menu Button */}
