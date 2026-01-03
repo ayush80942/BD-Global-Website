@@ -10,6 +10,7 @@ const ContactForm = () => {
     preferredCallbackTime: '',
     message: ''
   });
+  const [result, setResult] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,10 +20,39 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setResult('');
+    
+    const formDataToSend = new FormData(e.target);
+    formDataToSend.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult('Success! We\'ll get back to you soon.');
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          mobileNumber: '',
+          serviceType: '',
+          preferredCallbackTime: '',
+          message: ''
+        });
+        e.target.reset();
+      } else {
+        setResult('Error! Please try again or contact us directly.');
+      }
+    } catch (error) {
+      setResult('Error! Please try again or contact us directly.');
+    }
   };
 
   const handleWhatsAppClick = () => {
@@ -229,6 +259,17 @@ const ContactForm = () => {
               >
                 Send Message
               </Button>
+
+              {/* Result Message */}
+              {result && (
+                <div className={`mt-4 p-4 rounded-lg text-center font-medium ${
+                  result.startsWith('Success') 
+                    ? 'bg-green-100 text-green-700 border border-green-300' 
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                }`}>
+                  {result}
+                </div>
+              )}
             </form>
           </div>
         </div>

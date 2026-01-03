@@ -61,7 +61,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/about-us" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   About Us
                 </Link>
               </li>
@@ -76,7 +76,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/resources" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Blog
                 </Link>
               </li>
@@ -93,27 +93,27 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/company-registration" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Company Registration
                 </Link>
               </li>
               <li>
-                <Link to="/services/gst-registration" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   GST Registration
                 </Link>
               </li>
               <li>
-                <Link to="/services/accounting" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Accounting Services
                 </Link>
               </li>
               <li>
-                <Link to="/services/tax-filing" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   ITR & Tax Filing
                 </Link>
               </li>
               <li>
-                <Link to="/services/website-development" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Website Development
                 </Link>
               </li>
@@ -125,22 +125,22 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Legal & Support</h3>
             <ul className="space-y-3 mb-6">
               <li>
-                <Link to="/privacy-policy" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms-of-service" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="/refund-policy" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Refund Policy
                 </Link>
               </li>
               <li>
-                <Link to="/client-portal" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
+                <Link to="" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
                   Client Portal
                 </Link>
               </li>

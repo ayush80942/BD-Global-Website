@@ -13,8 +13,7 @@ const ContactOffice = () => {
   };
 
   const handleGetDirections = () => {
-    // You can replace this with actual coordinates or address
-    const address = "123 Business Tower, Commercial Complex, Andheri East, Mumbai - 400001, India";
+    const address = "D 194, First Floor, Okhla Phase 1, New Delhi - 110019, India";
     const encodedAddress = encodeURIComponent(address);
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
@@ -29,7 +28,7 @@ const ContactOffice = () => {
             Visit Our Office
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Located in the heart of Mumbai's business district
+            Located in Okhla Phase 1, New Delhi
           </p>
         </div>
 
@@ -112,22 +111,8 @@ const ContactOffice = () => {
           {/* Right Side - Map Card */}
           <div className="bg-white rounded-lg p-8 shadow-lg">
             <div className="bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 h-80 lg:h-96 flex flex-col items-center justify-center">
-              {/* Map Icon */}
-              {/* <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-              </div>
-               */}
-              {/* Map Text */}
-              {/* <div className="text-center">
-                <h4 className="text-lg font-semibold text-gray-700 mb-1">Interactive Map</h4>
-                <p className="text-sm text-gray-500">Coming Soon</p>
-              </div> */}
-
-              {/* Optional: You can replace this with an actual embedded map */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA0JzMzLjYiTiA3MsKwNTInMzkuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.5676!2d77.2736!3d28.5355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMyJzA3LjgiTiA3N8KwMTYnMjUuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, borderRadius: '8px' }}
