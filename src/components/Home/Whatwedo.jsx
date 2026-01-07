@@ -31,17 +31,17 @@ const Whatwedo = () => {
     {
       icon: (
         <svg
-  className="w-8 h-8"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  viewBox="0 0 24 24"
->
-  <circle cx="9" cy="7" r="3" />
-  <circle cx="17" cy="7" r="3" />
-  <path d="M3 21v-2a6 6 0 0 1 6-6h2" />
-  <path d="M13 21v-2a6 6 0 0 1 6-6h2" />
-</svg>
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="9" cy="7" r="3" />
+          <circle cx="17" cy="7" r="3" />
+          <path d="M3 21v-2a6 6 0 0 1 6-6h2" />
+          <path d="M13 21v-2a6 6 0 0 1 6-6h2" />
+        </svg>
       ),
       title: "HR, Payroll & Employee Operations",
       description: "Structured processes for a smooth employee lifecycle.",
@@ -75,15 +75,29 @@ const Whatwedo = () => {
     {
       icon: (
         <svg
-  className="w-8 h-8"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  viewBox="0 0 24 24"
->
-  <circle cx="12" cy="12" r="3" />
-  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06-2.12 2.12-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21h-3v-.08a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06-2.12-2.12.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3v-3h.08a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06 2.12-2.12.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3h3v.08a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06 2.12 2.12-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21v3h-.08a1.65 1.65 0 0 0-1.51 1z" />
-</svg>
+          className="w-8 h-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M16.5,19 C17.8807119,19 19,17.8807119 19,16.5 C19,15.1192881 17.8807119,14 16.5,14 C15.1192881,14 14,15.1192881 14,16.5 C14,17.8807119 15.1192881,19 16.5,19 Z" />
+              <path d="M10,5 L12,3" />
+              <path d="M7.5,10 C8.88071187,10 10,8.88071187 10,7.5 C10,6.11928813 8.88071187,5 7.5,5 C6.11928813,5 5,6.11928813 5,7.5 C5,8.88071187 6.11928813,10 7.5,10 Z" />
+              <path d="M8,16 L16,8" />
+              <path d="M5.5,21 C6.88071187,21 8,19.8807119 8,18.5 C8,17.1192881 6.88071187,16 5.5,16 C4.11928813,16 3,17.1192881 3,18.5 C3,19.8807119 4.11928813,21 5.5,21 Z" />
+              <path d="M18.5,8 C19.8807119,8 21,6.88071187 21,5.5 C21,4.11928813 19.8807119,3 18.5,3 C17.1192881,3 16,4.11928813 16,5.5 C16,6.88071187 17.1192881,8 18.5,8 Z" />
+              <path d="M12,21 L14,19" />
+            </g>
+          </g>
+        </svg>
       ),
       title: "Technology, Automation & Growth Support",
       description: "Integrated digital solutions to streamline operations and accelerate business expansion.",

@@ -2,9 +2,8 @@ import React from 'react';
 
 const OfficeHoursAndServices = () => {
   const officeHours = [
-    { day: "Monday - Friday", time: "9:00 AM - 7:00 PM" },
-    { day: "Saturday", time: "9:00 AM - 5:00 PM" },
-    { day: "Sunday", time: "10:00 AM - 4:00 PM" },
+    { day: "Monday - Saturday", time: "9:00 AM - 7:00 PM" },
+    { day: "Sunday", time: "Closed" },
     { day: "Public Holidays", time: "Emergency Support Only" }
   ];
 

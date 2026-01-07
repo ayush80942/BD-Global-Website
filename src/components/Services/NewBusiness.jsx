@@ -179,7 +179,7 @@ const ForNewBusinesses = () => {
 
               {/* CTA pinned to bottom */}
               <div className="flex items-center justify-between mt-auto pt-4">
-                <button className="mt-4 bg-transparent border-2 border-blue-950 hover:border-teal-500 hover:bg-teal-500 hover:text-white text-gray-700 font-semibold px-6 py-2 rounded-lg transition-all duration-300">
+                <button onClick={() => window.open('https://wa.me/919876543210', '_blank')} className="mt-4 bg-transparent border-2 border-blue-950 hover:border-teal-500 hover:bg-teal-500 hover:text-white text-gray-700 font-semibold px-6 py-2 rounded-lg transition-all duration-300 cursor-pointer">
                   {service.buttonText}
                 </button>
               </div>
