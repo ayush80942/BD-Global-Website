@@ -130,7 +130,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center mr-8">
               <img src={Assets.logo} alt="Background" className="w-10 h-9" />
+              <p1 className="ml-2 text-md font-bold text-[#083f04]">
+                BD Global
+              </p1>
           </Link>
+          
 
           {/* Tablet Actions */}
           <div className="flex items-center space-x-3">
@@ -155,6 +159,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center ml-2 mr-8">
               <img src={Assets.logo} alt="Background" className="w-10 h-9" />
+              <p1 className="ml-2 text-md font-bold text-[#083f04]">
+                BD Global
+              </p1>
           </Link>
 
           {/* Mobile Menu Button */}

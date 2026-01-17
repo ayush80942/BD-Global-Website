@@ -9,11 +9,10 @@ const ContactCard = () => {
         </svg>
       ),
       title: "Call Us",
-      line1: "+91 98765 43210",
-      line2: "+91 87654 32109",
+      line1: "+91 76785 22441",
       description: "Speak directly with our experts",
       buttonText: "Call Now",
-      buttonAction: () => window.open('tel:+919876543210', '_self')
+      buttonAction: () => window.open('tel:+917678522441', '_self')
     },
     {
       icon: (
@@ -26,7 +25,7 @@ const ContactCard = () => {
       line2: "24/7 Available",
       description: "Get immediate answers to your queries",
       buttonText: "Chat Now",
-      buttonAction: () => window.open('https://wa.me/919876543210', '_blank')
+      buttonAction: () => window.open('https://wa.me/917678522441', '_blank')
     },
     {
       icon: (
@@ -36,11 +35,10 @@ const ContactCard = () => {
         </svg>
       ),
       title: "Email",
-      line1: "info@bdglobal.com",
-      line2: "support@bdglobal.com",
+      line1: "info@bd-global.com",
       description: "Detailed inquiries and documentation",
       buttonText: "Send Email",
-      buttonAction: () => window.open('mailto:info@bdglobal.com', '_self')
+      buttonAction: () => window.open('mailto:info@bd-global.com', '_self')
     },
     {
       icon: (
@@ -53,7 +51,7 @@ const ContactCard = () => {
       line2: "30 Minutes",
       description: "Schedule a detailed discussion",
       buttonText: "Book Now",
-      buttonAction: () => console.log('Book meeting clicked')
+      buttonAction: () => window.location.href = '/'
     }
   ];
 

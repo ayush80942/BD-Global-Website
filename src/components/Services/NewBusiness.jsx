@@ -124,24 +124,6 @@ const ForNewBusinesses = () => {
           </p>
         </div>
 
-        {/* Complete Package CTA */}
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 mb-10">
-
-          <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
-            Complete Startup Success Kit - ₹6,999
-          </button>
-
-          <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
-            Complete Growth Pack - ₹14,999
-          </button>
-
-          <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
-            Scale/CFO Kit - ₹29,999
-          </button>
-
-        </div>
-
-
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
