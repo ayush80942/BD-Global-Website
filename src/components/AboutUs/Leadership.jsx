@@ -4,24 +4,24 @@ const LeadershipTeam = () => {
   const leaders = [
     {
       id: 1,
-      name: "CA Rajesh Kumar",
-      designation: "Founder & Managing Partner",
-      experience: "FCA, B.Com,15+ Years Experience",
-      description: "Expert in corporate law, taxation, and business strategy with extensive experience in helping startups and SMEs."
+      name: "Guru Charan Gupta",
+      designation: "Senior Advisor",
+      experience: "B.Com – University of Rajasthan, 35+ Years Experience",
+      description: "Guru Charan Gupta brings over three decades of deep, hands-on business and financial experience. With a strong foundation in commerce and extensive exposure to Indian business practices, he provides strategic direction and practical insights to BD Global. His experience helps the firm balance compliance, governance, and long-term business sustainability."
     },
     {
       id: 2,
-      name: "CA Priya Sharma",
-      designation: "Senior Partner",
-      experience: "ACA, MCOM,12+ ears Experience",
-      description: "Specializes in GST, ROC filings, and regulatory compliance with a track record of zero penalties for clients."
+      name: "Rajeev Kumar",
+      designation: "Operations & Client Relations Lead",
+      experience: "B.Com – University of Delhi, 12+ Years Experience",
+      description: "Rajeev Kumar oversees operations and client coordination at BD Global. With strong academic grounding and real-world operational experience, he plays a key role in execution, process management, and ensuring timely delivery of services. His structured approach helps translate strategy into actionable outcomes for clients."
     },
     {
       id: 3,
-      name: "CS Amit Patel",
-      designation: "Compliance Head",
-      experience: "CS, LLB, 10+ Years Experience",
-      description: "Expert in company law, legal documentation, and corporate governance with focus on startup ecosystem."
+      name: "Arjun Shakya",
+      designation: "Strategy & Business Development",
+      experience: "B.Com, MBA, 6+ Years Experience",
+      description: "Arjun Shakya represents the next generation of leadership at BD Global. With a combination of commerce and management education, he focuses on strategy, growth initiatives, and client engagement. His analytical mindset and modern business perspective support innovation and expansion across service lines."
     }
   ];
 
