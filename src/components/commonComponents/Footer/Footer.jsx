@@ -13,7 +13,11 @@ const Footer = () => {
             {/* Logo */}
             <div className="flex items-center mb-4">
               <Link to="/" className="flex items-center mr-2">
-                <img src={Assets.logo} alt="Background" className="w-10 h-9" />
+                <img
+                  src={Assets.logo}
+                  alt="Logo"
+                  className="w-10 h-9 brightness-0 invert"
+                />
               </Link>
               <span className="text-white font-semibold text-lg">BD Global</span>
             </div>
@@ -120,7 +124,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-teal-400 text-sm transition-colors">
-                  Technology, Automation <br/> & Growth Support
+                  Technology, Automation <br /> & Growth Support
                 </Link>
               </li>
             </ul>

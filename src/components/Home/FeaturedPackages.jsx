@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../commonComponents/Button/Button';
 import { useNavigate } from "react-router-dom";
 
 const FeaturedPackages = () => {
   const navigate = useNavigate();
+
+  const [expandedPackage, setExpandedPackage] = useState(null);
 
   const packages = [
     {
@@ -78,6 +80,7 @@ const FeaturedPackages = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-custom-black mb-4">
@@ -90,63 +93,49 @@ const FeaturedPackages = () => {
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.id}
-              className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${pkg.highlighted ? 'border-2 border-teal-400' : 'border border-gray-200'
-                } flex flex-col h-full`}
-            >
-              {/* Badge */}
-              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                <span className={`inline-flex items-center justify-center text-center px-4 py-1 rounded-full text-xs sm:text-sm leading-tight whitespace-nowrap text-white ${pkg.highlighted ? 'bg-green-500' : 'bg-blue-500'
-                  }`}>
-                  {pkg.badge}
-                </span>
-              </div>
+          {packages.map((pkg) => {
 
-              {/* Package Title */}
-              <h3 className="text-2xl font-bold text-custom-black mb-4 mt-4">
-                {pkg.name}
-              </h3>
+            const isExpanded = expandedPackage === pkg.id;
+            const visibleFeatures = isExpanded
+              ? pkg.features
+              : pkg.features.slice(0, 6); // ✅ Show only first 6 normally
 
-              {/* Price */}
-              <div className="mb-6">
-                <div className="flex items-baseline mb-2">
-                  <span className="text-4xl font-bold text-custom-black">{pkg.price}</span>
-                  <span className="text-lg text-gray-500 line-through ml-3">{pkg.originalPrice}</span>
+            return (
+              <div
+                key={pkg.id}
+                className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 flex flex-col h-full"
+              >
+                {/* Badge */}
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                  <span className="inline-flex items-center justify-center px-4 py-1 rounded-full text-xs sm:text-sm text-white bg-blue-500">
+                    {pkg.badge}
+                  </span>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {pkg.description}
-                </p>
-              </div>
 
-              {/* Features List */}
-              <ul className="space-y-3 mb-8">
-                {pkg.features.map((feature, index) => {
-                  const blurStartIndex = pkg.features.length - 12;
-                  return (
-                    <li
-                      key={index}
-                      className="flex items-start"
-                      style={
-                        index >= blurStartIndex
-                          ? (() => {
-                            const maxBlur = 4; // px (final blur strength)
-                            const steps = pkg.features.length - blurStartIndex - 1;
-                            const blurLevel =
-                              ((index - blurStartIndex) / steps) * maxBlur;
+                {/* Package Title */}
+                <h3 className="text-2xl font-bold text-custom-black mb-4 mt-4">
+                  {pkg.name}
+                </h3>
 
-                            return {
-                              filter: `blur(${blurLevel}px)`,
-                              WebkitMaskImage:
-                                'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
-                              maskImage:
-                                'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
-                            };
-                          })()
-                          : undefined
-                      }
-                    >
+                {/* Price */}
+                <div className="mb-6">
+                  <div className="flex items-baseline mb-2">
+                    <span className="text-4xl font-bold text-custom-black">
+                      {pkg.price}
+                    </span>
+                    <span className="text-lg text-gray-500 line-through ml-3">
+                      {pkg.originalPrice}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {pkg.description}
+                  </p>
+                </div>
+
+                {/* ✅ Features List (No Blur, Collapsible) */}
+                <ul className="space-y-3 mb-4">
+                  {visibleFeatures.map((feature, index) => (
+                    <li key={index} className="flex items-start">
                       <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
                         <svg
                           className="w-3 h-3 text-teal-600"
@@ -165,22 +154,33 @@ const FeaturedPackages = () => {
                         {feature}
                       </span>
                     </li>
-                  );
-                })}
-              </ul>
+                  ))}
+                </ul>
 
+                {/* ✅ View More Button */}
+                {pkg.features.length > 6 && (
+                  <button
+                    className="text-sm font-semibold text-teal-600 hover:text-teal-800 mb-6 text-left"
+                    onClick={() =>
+                      setExpandedPackage(isExpanded ? null : pkg.id)
+                    }
+                  >
+                    {isExpanded ? "View Less ↑" : "View More ↓"}
+                  </button>
+                )}
 
-              {/* Action Buttons */}
-              <div className="mt-auto">
-                <button
-                  className="w-full border border-gray-300 text-custom-black hover:bg-gray-50 px-6 py-3 rounded-md text-sm font-medium transition-colors cursor-pointer"
-                  onClick={() => window.location.href = `/pricing?package=${pkg.id}`}
-                >
-                  View Details
-                </button>
+                {/* Action Button */}
+                {/* <div className="mt-auto">
+                  <button
+                    className="w-full border border-gray-300 text-custom-black hover:bg-gray-50 px-6 py-3 rounded-md text-sm font-medium transition-colors cursor-pointer"
+                    onClick={() => navigate(`/pricing?package=${pkg.id}`)}
+                  >
+                    View Details
+                  </button>
+                </div> */}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* View All Packages Button */}
@@ -190,6 +190,7 @@ const FeaturedPackages = () => {
             children="View All Packages"
           />
         </div>
+
       </div>
     </section>
   );
