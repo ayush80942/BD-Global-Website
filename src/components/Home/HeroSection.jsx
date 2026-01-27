@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import Navbar from '../commonComponents/Navbar/Navbar';
 import { Assets } from '../../assets/assets';
 import Button from '../commonComponents/Button/Button';
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative bg-linear-to-r from-slate-800 via-teal-700 to-emerald-400 py-6">
       {/* Background overlay with business people silhouette effect */}
@@ -31,7 +34,10 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-20">
-          <Button children="Get a Proposal" onClick={() => window.location.href = "/contact"} />
+          <Button
+    children="Get a Proposal"
+    onClick={() => navigate("/contact")}
+  />
 
           <Link
             to="/pricing"
