@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from '../commonComponents/Button/Button';
+import { useNavigate } from "react-router-dom";
 
 const Whatwedo = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: (
@@ -157,8 +160,12 @@ const Whatwedo = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <Button onClick={() => window.location.href = '/services'} children="View All Services" />
+          <Button
+            onClick={() => navigate("/services")}
+            children="View All Services"
+          />
         </div>
+
 
       </div>
     </section>

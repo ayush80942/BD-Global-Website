@@ -35,10 +35,9 @@ const HeroSection = () => {
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-20">
           <Button
-    children="Get a Proposal"
-    onClick={() => navigate("/contact")}
-  />
-
+            children="Get a Proposal"
+            onClick={() => navigate("/contact")}
+          />
           <Link
             to="/pricing"
             className="border border-white text-white px-6 py-3 rounded-md text-sm font-semibold 
