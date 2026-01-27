@@ -1,7 +1,9 @@
 import React from 'react';
 import Button from '../commonComponents/Button/Button';
+import { useNavigate } from "react-router-dom";
 
 const FeaturedPackages = () => {
+  const navigate = useNavigate();
 
   const packages = [
     {
@@ -183,7 +185,10 @@ const FeaturedPackages = () => {
 
         {/* View All Packages Button */}
         <div className="text-center">
-          <Button onClick={() => window.location.href = '/pricing'} children="View All Packages" />
+          <Button
+            onClick={() => navigate("/pricing")}
+            children="View All Packages"
+          />
         </div>
       </div>
     </section>
