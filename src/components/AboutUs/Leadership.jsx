@@ -5,20 +5,23 @@ const LeadershipTeam = () => {
     {
       id: 1,
       name: "Guru Charan Gupta",
+      img: "src/assets/images/Guru Charan.jpg",
       designation: "Senior Advisor",
       experience: "B.Com – University of Rajasthan, 35+ Years Experience",
       description: "Guru Charan Gupta brings over three decades of deep, hands-on business and financial experience. With a strong foundation in commerce and extensive exposure to Indian business practices, he provides strategic direction and practical insights to BD Global. His experience helps the firm balance compliance, governance, and long-term business sustainability."
     },
     {
       id: 2,
-      name: "Rajeev Kumar",
+      name: "CMA Gaurav Singh",
+      img: "src/assets/images/Gaurav.jpg",
       designation: "Operations & Client Relations Lead",
-      experience: "B.Com – University of Delhi, 12+ Years Experience",
-      description: "Rajeev Kumar oversees operations and client coordination at BD Global. With strong academic grounding and real-world operational experience, he plays a key role in execution, process management, and ensuring timely delivery of services. His structured approach helps translate strategy into actionable outcomes for clients."
+      experience: "CMA, B.Com(H) – University of Delhi",
+      description: "Gaurav oversees operations and client coordination at BD Global. With strong academic grounding and real-world operational experience, he plays a key role in execution, process management, and ensuring timely delivery of services. His structured approach helps translate strategy into actionable outcomes for clients."
     },
     {
       id: 3,
       name: "Arjun Shakya",
+      img: "src/assets/images/Arjun.jpg",
       designation: "Strategy & Business Development",
       experience: "B.Com, MBA, 6+ Years Experience",
       description: "Arjun Shakya represents the next generation of leadership at BD Global. With a combination of commerce and management education, he focuses on strategy, growth initiatives, and client engagement. His analytical mindset and modern business perspective support innovation and expansion across service lines."
@@ -48,23 +51,10 @@ const LeadershipTeam = () => {
             >
               {/* Profile Image */}
               <div className="relative mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden flex items-center justify-center">
-                  {index === 0 ? (
-                    // Sample image for first leader - replace with actual image
-                    <div className="w-full h-full border-4 border-emerald-400 rounded-full flex items-center justify-center">
-                      <span className="text-black text-2xl font-bold">RK</span>
+                <div className="w-40 h-40 mx-auto overflow-hidden flex items-center justify-center">
+                  <div className="w-full h-full rounded-full flex items-center justify-center">
+                      <img src={leader.img} alt="" />
                     </div>
-                  ) : index === 1 ? (
-                    // Placeholder circle for second leader (as shown in image)
-                    <div className="w-full h-full border-4 border-emerald-400 rounded-full flex items-center justify-center">
-                        <span className="text-black text-2xl font-bold">PS</span>
-                    </div>
-                  ) : (
-                    // Sample image for third leader - replace with actual image
-                    <div className="w-full h-full border-4 border-emerald-400 rounded-full flex items-center justify-center">
-                      <span className="text-black text-2xl font-bold">AP</span>
-                    </div>
-                  )}
                 </div>
               </div>
 
