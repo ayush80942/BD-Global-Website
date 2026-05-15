@@ -6,6 +6,7 @@ const FeaturedPackages = () => {
   const navigate = useNavigate();
 
   const [expandedPackage, setExpandedPackage] = useState(null);
+  const [allExpanded, setAllExpanded] = useState(false);
 
   const packages = [
     {
@@ -95,10 +96,9 @@ const FeaturedPackages = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {packages.map((pkg) => {
 
-            const isExpanded = expandedPackage === pkg.id;
-            const visibleFeatures = isExpanded
-              ? pkg.features
-              : pkg.features.slice(0, 6); // ✅ Show only first 6 normally
+            const isExpanded = allExpanded || expandedPackage === pkg.id;
+            const visibleFeatures = pkg.features.slice(0, 6);
+            const extraFeatures = pkg.features.slice(6);
 
             return (
               <div
@@ -133,7 +133,7 @@ const FeaturedPackages = () => {
                 </div>
 
                 {/* ✅ Features List (No Blur, Collapsible) */}
-                <ul className="space-y-3 mb-4">
+                <ul className="space-y-3 mb-2">
                   {visibleFeatures.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
@@ -157,10 +157,44 @@ const FeaturedPackages = () => {
                   ))}
                 </ul>
 
-                {/* ✅ View More Button */}
+                {extraFeatures.length > 0 && (
+                  <div
+                    className="overflow-hidden transition-all duration-500 ease-in-out"
+                    style={{
+                      maxHeight: isExpanded ? '520px' : '0px',
+                      opacity: isExpanded ? 1 : 0,
+                    }}
+                  >
+                    <ul className="space-y-3 mb-4 mt-1">
+                      {extraFeatures.map((feature, index) => (
+                        <li key={index} className="flex items-start">
+                          <div className="w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                            <svg
+                              className="w-3 h-3 text-teal-600"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+
+                          <span className="text-sm text-gray-900">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* ✅ Mobile-only per-card View More (keep mobile behavior unchanged) */}
                 {pkg.features.length > 6 && (
                   <button
-                    className="text-sm font-semibold text-teal-600 hover:text-teal-800 mb-6 text-left"
+                    className="text-sm font-semibold text-teal-600 hover:text-teal-800 mb-6 text-left block sm:hidden"
                     onClick={() =>
                       setExpandedPackage(isExpanded ? null : pkg.id)
                     }
@@ -183,12 +217,23 @@ const FeaturedPackages = () => {
           })}
         </div>
 
-        {/* View All Packages Button */}
-        <div className="text-center">
-          <Button
-            onClick={() => navigate("/pricing")}
-            children="View All Packages"
-          />
+        {/* Global View More (desktop) + View All Packages Button */}
+        <div className="text-center space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-center sm:gap-4">
+          <div className="hidden sm:block">
+            <button
+              className="px-10 py-3.5 rounded-md text-sm shadow-md font-medium border border-gray-300 text-custom-black bg-white hover:bg-gray-50"
+              onClick={() => setAllExpanded(!allExpanded)}
+            >
+              {allExpanded ? "View Less" : "View More"}
+            </button>
+          </div>
+
+          <div>
+            <Button
+              onClick={() => navigate("/pricing")}
+              children="View All Packages"
+            />
+          </div>
         </div>
 
       </div>
